@@ -6,6 +6,10 @@ class TrainingSession(models.Model):
     instructor = models.CharField(max_length=100)
     date = models.DateField()
     time = models.TimeField()
+    description = models.TextField(default='')
+
+    def __str__(self):
+        return f"{self.instructor} - {self.date} {self.time}"
 
 
 class Booking(models.Model):
