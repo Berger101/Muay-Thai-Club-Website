@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from django.views import generic
+# from django.views import generic
 from .models import TrainingSession
 
 
-# Create your views here.
-class TrainingSessionList(generic.ListView):
-    queryset = TrainingSession.objects.all()
-    template_name = "training_list.html"
+def training_sessions_list(request):
+    sessions = TrainingSession.objects.all()
+    return render(request, 'training_sessions_list.html', {'sessions': sessions})
