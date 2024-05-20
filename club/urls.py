@@ -1,9 +1,10 @@
 from . import views
 from django.urls import path
-from .views import TrainingSessionListView
+from .views import TrainingSessionListView, TrainingSessionDetailView
 
 
 #  urlpattern for TrainingSessionList class-based view (from club/views.py) named home.
 urlpatterns = [
     path('activities/', TrainingSessionListView.as_view(), name='home'),
+    path('activities/<int:pk>/', TrainingSessionDetailView.as_view(), name='training_session_detail'),
 ]

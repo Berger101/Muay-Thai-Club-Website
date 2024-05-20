@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>{{ session.title }}</h1>
+            <p><strong>Instructor:</strong> {{ session.instructor }}</p>
+            <p><strong>Date:</strong> {{ session.date }}</p>
+            <p><strong>Time:</strong> {{ session.time }}</p>
+            <p><strong>Excerpt:</strong> {{ session.excerpt }}</p>
+            <p><strong>Description:</strong> {{ session.description|safe }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
