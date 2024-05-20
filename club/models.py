@@ -3,13 +3,17 @@ from django.contrib.auth.models import User
 
 
 class TrainingSession(models.Model):
+    title = models.CharField(max_length=200, default='')
     instructor = models.CharField(max_length=100)
     date = models.DateField()
     time = models.TimeField()
     description = models.TextField(default='')
+    excerpt = models.TextField(max_length=500, blank=True)
 
     def __str__(self):
         return f"{self.instructor} - {self.date} {self.time}"
+    # def __str__(self):
+    #     return self.title
 
 
 class Booking(models.Model):
