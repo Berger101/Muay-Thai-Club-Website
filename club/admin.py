@@ -10,7 +10,7 @@ class TrainingSessionAdmin(SummernoteModelAdmin):
     list_display = ('instructor', 'date', 'time')
     search_fields = ['instructor', 'description']
     list_filter = ('instructor', 'date')
-    # prepopulated_fields = {}
+    prepopulated_fields = {'title': ('instructor', 'date')}
 
 
 class BookingAdmin(admin.ModelAdmin):
