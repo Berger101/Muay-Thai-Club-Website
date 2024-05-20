@@ -1,8 +1,10 @@
 from django.shortcuts import render
-# from django.views import generic
+from django.views.generic import ListView
 from .models import TrainingSession
 
 
-def training_sessions_list(request):
-    sessions = TrainingSession.objects.all()
-    return render(request, 'training_sessions_list.html', {'sessions': sessions})
+class TrainingSessionListView(ListView):
+    model = TrainingSession
+    template_name = 'index.html'
+    paginate_by = 6
+    context_object_name = 'sessions'
