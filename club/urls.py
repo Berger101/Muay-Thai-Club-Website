@@ -1,8 +1,9 @@
 from . import views
 from django.urls import path
+from .views import TrainingSessionListView
 
 
-#  urlpattern for TrainingSessionList class-based view (from club/views.py) named training_sessions_list.
+#  urlpattern for TrainingSessionList class-based view (from club/views.py) named home.
 urlpatterns = [
-    path('activities/', views.training_sessions_list, name='training_sessions_list'),
+    path('activities/', TrainingSessionListView.as_view(), name='home'),
 ]
