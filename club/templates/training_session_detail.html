@@ -12,7 +12,13 @@
                 <p class="post-subtitle">{{ session.instructor }} | {{ session.date }} | {{ session.time }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/muay_thai2.jpg' %}" class="scale" alt="placeholder">
+                {% if "placeholder" in session.featured_image.url %}
+                <img class="card-img-top" src="{% static 'images/muay_thai2.jpg' %}"
+                  alt="placeholder image">
+                {% else %}
+                <img class="card-img-top" src=" {{ session.featured_image.url }}"
+                  alt="{{ session.title }}">
+                {% endif %}
             </div>
         </div>
     </div>

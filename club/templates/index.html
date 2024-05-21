@@ -14,12 +14,12 @@
             <div class="card-body">
 
               <div class="image-container">
-                {% if "placeholder" in post.featured_image.url %}
-                <img class="card-img-top" src="{% static 'images/muaythai.jpg' %}"
+                {% if "placeholder" in session.featured_image.url %}
+                <img class="card-img-top" src="{% static 'images/muay_thai2.jpg' %}"
                   alt="placeholder image">
                 {% else %}
-                <img class="card-img-top" src=" {{ post.featured_image.url }}"
-                  alt="{{ post.title }}">
+                <img class="card-img-top" src=" {{ session.featured_image.url }}"
+                  alt="{{ session.title }}">
                 {% endif %}
                 <div class="image-flash">
                   <p class="author">Instructor: {{ session.instructor }}</p>
