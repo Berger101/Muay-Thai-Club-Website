@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
 class TrainingSession(models.Model):
@@ -7,6 +8,7 @@ class TrainingSession(models.Model):
     instructor = models.CharField(max_length=100)
     date = models.DateField()
     time = models.TimeField()
+    featured_image = CloudinaryField('image', default='placeholder')
     description = models.TextField(default='')
     excerpt = models.TextField(max_length=500, blank=True)
 
