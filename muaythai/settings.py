@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'activities',
     'contact',
+    'club',
 ]
 
 SITE_ID = 1

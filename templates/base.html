@@ -1,5 +1,6 @@
 {% load static %}
-{% url 'activities' as home_url %}
+{% url 'home' as home_url %}
+{% url 'activities' as activities_url %}
 {% url 'contact' as contact_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
@@ -44,7 +45,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'activities' %}"
+        <a class="navbar-brand" href="{% url 'home' %}"
           ><span class="brand"
             >m<span class="red-o">u</span>ay<span class="thin"
               >|thai</span
