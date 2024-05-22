@@ -7,7 +7,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('club', '0003_trainingsession_excerpt_trainingsession_title'),
+        ('activities', '0003_trainingsession_excerpt_trainingsession_title'),
     ]
 
     operations = [
