@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import About
+from .models import Contact
 from django_summernote.admin import SummernoteModelAdmin
 
 
-@admin.register(About)
-class AboutAdmin(SummernoteModelAdmin):
+@admin.register(Contact)
+class ContactAdmin(SummernoteModelAdmin):
 
     summernote_fields = ('content',)

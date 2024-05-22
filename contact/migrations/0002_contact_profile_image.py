@@ -7,12 +7,12 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('about', '0001_initial'),
+        ('contact', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='about',
+            model_name='Contact',
             name='profile_image',
             field=cloudinary.models.CloudinaryField(default='placeholder', max_length=255, verbose_name='image'),
         ),
