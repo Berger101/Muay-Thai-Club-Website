@@ -1,1 +1,1 @@
-web: gunicorn muay-thai-club-website.wsgi
+web: gunicorn muaythai.wsgi:application
