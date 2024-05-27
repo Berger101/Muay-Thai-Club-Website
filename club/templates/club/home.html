@@ -1,8 +1,30 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="container">
-    <h1>Welcome to the Muay Thai Club</h1>
-    <p>This is the home page of the Muay Thai club. Here you can find information about our activities, training sessions, and more.</p>
+  <!-- Hero Section -->
+  <div class="hero-section position-relative">
+    <img src="{% static 'images/muaythai_homeimage.jpg' %}" alt="Muay Thai Club" class="img-fluid w-80">
+    <div class="hero-text position-absolute top-50 start-50 translate-middle text-center">
+      <h1 class="display-4">Welcome to the Muay Thai Club</h1>
+      <p class="lead">This is the home page of the Muay Thai club. Here you can find information about our activities, training sessions, and more.</p>
+    </div>
+  </div>
+
+  <!-- About Us Section -->
+  <div class="mt-5">
+    <h2>Briefly about us</h2>
+    <p>
+      With us, you can practice Thai boxing, classic boxing and BJJ. And
+      everyone can train - regardless of who you are, how old you are, and
+      whether you're trying martial arts for the first time or have been to a
+      lot of matches - with us everyone has a place and is equally welcome! We
+      also have private training, group training for companies, associations and
+      schools, and special events such as staff parties, kick offs, hen/stag
+      parties and more. Just scroll down and click on what you want to know more
+      about!
+    </p>
+  </div>
 </div>
 {% endblock %}
