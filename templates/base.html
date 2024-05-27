@@ -14,14 +14,7 @@
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">    
 
     <!-- Font Awesome CSS -->
     <link
@@ -41,12 +34,12 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
 
-  <body class="d-flex flex-column h-100 main-bg">
+  <body class="d-flex flex-column h-100">
     {% block header %}
       {% include 'header.html' %}
     {% endblock %}
 
-    <main class="flex-shrink-0 main-bg">
+    <main class="flex-shrink-0">
       {% if user.is_authenticated %}
       <p class="text-end m-3">You are logged in as {{ user }}</p>
       {% else %}

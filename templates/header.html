@@ -1,8 +1,11 @@
-<!-- Navigation -->
+<!-- Navigation header -->
+{% load static %}
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home' %}"
-      ><span class="brand">m<span class="red-o">u</span>ay<span class="thin">|thai</span></span></a>
+    <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+      <img src="{% static 'images/muay_thai2.jpg' %}" alt="Logo" class="logo me-2">
+      <span class="brand">m<span class="red-o">u</span>ay<span class="thin">|thai</span></span>
+    </a>
 
     <button
       class="navbar-toggler"
@@ -15,59 +18,45 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarText">
+      <ul class="navbar-nav mb-2 mb-lg-0">
         <!-- Activities -->
         <li class="nav-item">
-          <a
-            class="nav-link {% if request.path == home_url %}active{% endif %}"
-            aria-current="page"
-            href="{% url 'activities' %}"
-            >Activities</a
-          >
+          <a class="nav-link {% if request.path == activities_url %}active{% endif %}" aria-current="page"
+             href="{% url 'activities' %}">Activities</a>
         </li>
         <!-- Contact -->
         <li class="nav-item">
-          <a
-            class="nav-link {% if request.path == contact_url %}active{%endif%}"
-            aria-current="page"
-            href="{% url 'contact' %}"
-            >Contact</a
-          >
+          <a class="nav-link {% if request.path == contact_url %}active{% endif %}" aria-current="page"
+             href="{% url 'contact' %}">Contact</a>
         </li>
 
-        <!-- logout, register and login -->
+        <!-- Authentication Links -->
         {% if user.is_authenticated %}
         <li class="nav-item">
-          <a
-            class="nav-link {% if request.path == logout_url %}active{% endif %}"
-            aria-current="page"
-            href="{% url 'account_logout' %}"
-            >Logout</a
-          >
+          <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+             href="{% url 'account_logout' %}">Logout</a>
         </li>
         {% else %}
         <li class="nav-item">
-          <a
-            class="nav-link {% if request.path == signup_url %}active{% endif %}"
-            aria-current="page"
-            href="{% url 'account_signup' %}"
-            >Register</a
-          >
+          <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+             href="{% url 'account_signup' %}">Register</a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link {% if request.path == login_url %}active{% endif %}"
-            aria-current="page"
-            href="{% url 'account_login' %}"
-            >Login</a
-          >
+          <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+             href="{% url 'account_login' %}">Login</a>
         </li>
         {% endif %}
       </ul>
-      <span class="navbar-text text-muted">
-        adventures of a Muay Thai fighter
-      </span>
     </div>
+    
+    <div class="social-icons-header d-none d-lg-flex">
+      <a href="#" class="text-dark me-3"><i class="fab fa-facebook-square"></i></a>
+      <a href="#" class="text-dark me-3"><i class="fab fa-twitter-square"></i></a>
+      <a href="#" class="text-dark me-3"><i class="fab fa-instagram-square"></i></a>
+      <a href="#" class="text-dark"><i class="fab fa-youtube-square"></i></a>
+    </div>
+    
   </div>
 </nav>

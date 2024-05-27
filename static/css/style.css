@@ -1,7 +1,12 @@
 body {
-  background-color: #F9FAFC;
+  font-family: 'Roboto', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bebas Neue', cursive;
+}
+
+/* Header */
 .brand {
   font-family: Lato, sans-serif;
   font-size: 1.4rem;
@@ -9,6 +14,21 @@ body {
   color: #4A4A4F;
 }
 
+.logo {
+  height: 150px;
+  width: auto;
+}
+
+.nav-link {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2rem;
+}
+
+.social-icons-header {
+  font-size: 1.5rem;
+}
+
+/* colors */
 .red-o {
   color: #E84610;
 }
@@ -22,7 +42,7 @@ body {
 }
 
 .dark-bg {
-  background-color: #445261;
+  background-color: #212529;
 }
 
 .main-bg {
