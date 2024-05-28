@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-  <!-- Hero Section -->
-  <div class="hero-section position-relative">
-    <img src="{% static 'images/muaythai_homeimage.jpg' %}" alt="Muay Thai Club" class="img-fluid w-80">
-    <div class="hero-text position-absolute top-50 start-50 translate-middle text-center">
-      <h1 class="display-4">Welcome to the Muay Thai Club</h1>
-      <p class="lead">This is the home page of the Muay Thai club. Here you can find information about our activities, training sessions, and more.</p>
-    </div>
+<!-- Hero Section -->
+<div class="hero-section position-relative">
+  <img src="{% static 'images/muaythai_homeimage.jpg' %}" alt="Muay Thai Club" class="img-fluid w-80">
+  <div class="hero-text position-absolute top-50 start-50 translate-middle text-center">
+    <h1 class="display-4">Welcome to the Muay Thai Club</h1>
+    <p class="lead">This is the home page of the Muay Thai club. Here you can find information about our activities, training sessions, and more.</p>
   </div>
+</div>
 
+<div class="container">
   <!-- About Us Section -->
   <div class="mt-5">
     <h2>Briefly about us</h2>
@@ -26,5 +26,21 @@
       about!
     </p>
   </div>
+
+  <!-- Activities Section -->
+  <div class="row mt-5">
+    {% for activity in activities %}
+    <div class="col-md-3">
+      <div class="card mb-4 shadow-sm">
+        <img src="{% static activity.image %}" class="card-img-top" alt="{{ activity.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ activity.title }}</h5>
+          <a href="{{ activity.link }}" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
 </div>
 {% endblock %}
