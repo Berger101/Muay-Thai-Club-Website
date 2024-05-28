@@ -50,14 +50,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Home page */
+/* Hero image */
 .hero-section {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
 .hero-section img {
   width: 100%;
   height: auto;
+  margin: 0 auto;
   display: block;
 }
 
@@ -80,9 +82,15 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.25rem;
 }
 
+/* Style for the cards */
 .card {
+  transition: transform 0.3s ease-in-out;
   border: none;
   background-color: transparent;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .image-container {
