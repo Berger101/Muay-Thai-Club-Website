@@ -26,9 +26,8 @@
               </div>
 
               <p class="card-text">
-                Category:
                 {% for category in session.categories.all %}
-                {{ category.name }}
+                <a href="{% url 'category_sessions' category_slug=category.slug %}" class="post-link">Category: {{ category.name }}</a>
                 {% if not forloop.last %}, {% endif %}
                 {% endfor %}
               </p>
