@@ -11,7 +11,7 @@ class TrainingSessionListView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        category_name = self.request.GET.get('category', None)
+        category_name = self.kwargs.get('category_name', None)
         if category_name:
             category = get_object_or_404(Category, name=category_name)
             queryset = queryset.filter(categories=category)
