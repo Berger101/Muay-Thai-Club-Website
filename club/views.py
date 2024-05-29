@@ -34,7 +34,7 @@ def home(request):
             'link': '/activities/corporate-events/',
         },
         {
-            'title': 'Child Training',
+            'title': 'Children Classes',
             'image': 'images/hen_stag_parties.jpg',
             'link': '/activities/hen-stag-parties/',
         },
