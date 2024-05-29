@@ -6,42 +6,42 @@ def home(request):
         {
             'title': 'Thai Boxing',
             'image': 'images/muaythai.jpg',
-            'link': '/activities/thai-boxing/',
+            'link': '/activities/category/thai-boxing/',
         },
         {
-            'title': 'Classic Boxing',
+            'title': 'Boxing',
             'image': 'images/muay_thai.jpg',
-            'link': '/activities/classic-boxing/',
+            'link': '/activities/category/boxing/',
         },
         {
             'title': 'BJJ',
             'image': 'images/bjj.jpg',
-            'link': '/activities/bjj/',
+            'link': '/activities/category/BJJ/',
         },
         {
             'title': 'Private Training',
             'image': 'images/private_training.jpg',
-            'link': '/activities/private-training/',
+            'link': '/activities/category/private-training/',
         },
         {
             'title': 'Group Training',
             'image': 'images/group_training.jpg',
-            'link': '/activities/group-training/',
+            'link': '/activities/category/group-training',
         },
         {
             'title': 'Corporate Events',
             'image': 'images/corporate_events.jpg',
-            'link': '/activities/corporate-events/',
+            'link': '/activities/category/corporate-events',
         },
         {
-            'title': 'Children Classes',
+            'title': 'Kids Classes',
             'image': 'images/hen_stag_parties.jpg',
-            'link': '/activities/hen-stag-parties/',
+            'link': '/activities/category/kids-classes/',
         },
         {
             'title': 'Events',
             'image': 'images/special_events.jpg',
-            'link': '/activities/special-events/',
+            'link': '/activities/category/events/',
         },
     ]
     return render(request, 'club/home.html', {'activities': activities})
