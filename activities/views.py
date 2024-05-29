@@ -11,9 +11,9 @@ class TrainingSessionListView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        category_name = self.kwargs.get('category_name', None)
-        if category_name:
-            category = get_object_or_404(Category, name=category_name)
+        category_slug = self.kwargs.get('category_slug')
+        if category_slug:
+            category = get_object_or_404(Category, slug=category_slug)
             queryset = queryset.filter(categories=category)
         return queryset
 
