@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-
 <div class="container-fluid">
   <div class="row">
     <!-- Training Sessions Column -->
@@ -25,6 +24,14 @@
                   <p class="author">Instructor: {{ session.instructor }}</p>
                 </div>
               </div>
+
+              <p class="card-text">
+                Category:
+                {% for category in session.categories.all %}
+                {{ category.name }}
+                {% if not forloop.last %}, {% endif %}
+                {% endfor %}
+              </p>
 
               <a href="{% url 'training_session_detail' session.pk %}" class="post-link">
                 <h2 class="card-title">{{ session.title }}</h2>
