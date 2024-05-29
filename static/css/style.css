@@ -120,6 +120,13 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #188181;
 }
 
+/* About us section */
+.about-us-section {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .scale {
   width: 100%;
   height: auto;
