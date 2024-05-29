@@ -32,7 +32,9 @@
     {% for activity in activities %}
     <div class="col-md-3">
       <div class="card mb-4 shadow-sm">
-        <img src="{% static activity.image %}" class="card-img-top" alt="{{ activity.title }}">
+        <div class="card-img-container">
+          <img src="{% static activity.image %}" class="card-img-top" alt="{{ activity.title }}">
+        </div>
         <div class="card-body">
           <h5 class="card-title">{{ activity.title }}</h5>
           <a href="{{ activity.link }}" class="btn btn-primary">Learn More</a>
@@ -41,6 +43,7 @@
     </div>
     {% endfor %}
   </div>
+
 
 </div>
 {% endblock %}
