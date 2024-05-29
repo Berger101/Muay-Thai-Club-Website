@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <h1>Sessions for {{ category.name }}</h1>
+  <div class="row">
+    {% for session in sessions %}
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="image-container">
+            {% if "placeholder" in session.featured_image.url %}
+            <img
+              class="card-img-top"
+              src="{% static 'images/muay_thai2.jpg' %}"
+              alt="placeholder image"
+            />
+            {% else %}
+            <img
+              class="card-img-top"
+              src="{{ session.featured_image.url }}"
+              alt="{{ session.title }}"
+            />
+            {% endif %}
+            <div class="image-flash">
+              <p class="author">Instructor: {{ session.instructor }}</p>
+            </div>
+          </div>
+          <a
+            href="{% url 'training_session_detail' session.pk %}"
+            class="post-link"
+          >
+            <h2 class="card-title">{{ session.title }}</h2>
+            <p class="card-text">{{ session.excerpt }}</p>
+          </a>
+          <hr />
+          <p class="card-text text-muted h6">
+            {{ session.date }} {{ session.time }}
+          </p>
+        </div>
+      </div>
+    </div>
+    {% if forloop.counter|divisibleby:3 %}
+  </div>
+  <div class="row">{% endif %} {% endfor %}</div>
+</div>
+{% endblock %}
