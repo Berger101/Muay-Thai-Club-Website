@@ -1,31 +1,38 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.utils.text import slugify
 
 
 class Category(models.Model):
     BOXING = 'Boxing'
-    THAI_BOXING = 'Thai Boxing'
+    THAIBOXING = 'Thai Boxing'
     BJJ = 'BJJ'
-    PRIVATE_TRAINING = 'Private Training'
-    GROUP_TRAINING = 'Group Training'
+    PRIVATETRAINING = 'Private Training'
+    GROUPTRAINING = 'Group Training'
     EVENTS = 'Events'
-    CORPORATE_EVENTS = 'Corporate Events'
-    CHILDREN_CLASSES = 'Children Classes'
+    CORPORATEEVENTS = 'Corporate Events'
+    KIDSCLASSES = 'Kids Classes'
 
     CATEGORY_CHOICES = [
         (BOXING, 'Boxing'),
-        (THAI_BOXING, 'Thai Boxing'),
+        (THAIBOXING, 'Thai Boxing'),
         (BJJ, 'BJJ'),
-        (PRIVATE_TRAINING, 'Private Training'),
-        (GROUP_TRAINING, 'Group Training'),
+        (PRIVATETRAINING, 'Private Training'),
+        (GROUPTRAINING, 'Group Training'),
         (EVENTS, 'Events'),
-        (CORPORATE_EVENTS, 'Corporate Events'),
-        (CHILDREN_CLASSES, 'Children Classes'),
+        (CORPORATEEVENTS, 'Corporate Events'),
+        (KIDSCLASSES, 'Kids Classes'),
     ]
 
     name = models.CharField(
         max_length=100, choices=CATEGORY_CHOICES, unique=True)
+    slug = models.SlugField(max_length=100, unique=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
