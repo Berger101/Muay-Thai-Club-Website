@@ -7,5 +7,5 @@ from .views import TrainingSessionListView, TrainingSessionDetailView
 urlpatterns = [
     path('', TrainingSessionListView.as_view(), name='activities'),
     path('activities/<int:pk>/', TrainingSessionDetailView.as_view(), name='training_session_detail'),
-    path('category/<str:category_name>/', views.TrainingSessionListView.as_view(), name='category_sessions'),
+    path('category/<slug:category_slug>/', TrainingSessionListView.as_view(), name='category_sessions'),
 ]
