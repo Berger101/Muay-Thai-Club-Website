@@ -3,6 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
 
 <div class="container mt-5">
   <div class="row">
@@ -43,4 +44,12 @@
   </div>
 </div>
 
+<script src="{% static 'js/sendEmail.js' %}"></script>
+<script type="text/javascript">
+  window.emailjsConfig = {
+    serviceID: "{{ EMAILJS_SERVICE_ID }}",
+    templateID: "{{ EMAILJS_TEMPLATE_ID }}",
+    publicKey: "{{ EMAILJS_PUBLIC_KEY }}"
+  };
+</script>
 {% endblock content %}
