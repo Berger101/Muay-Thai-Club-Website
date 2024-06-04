@@ -11,9 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(
         function (response) {
           console.log("SUCCESS", response);
+          alert("Your message was sent successfully!");
         },
         function (error) {
           console.log("FAILED", error);
+          alert("There was an error sending your message. Please try again later.");
         }
       );
     return false; // To block from loading a new page
