@@ -38,6 +38,87 @@ Access the site here <a href="https://muay-thai-club-website-a215eeee688f.heroku
 - **Login:** Use the login page to access your account.
 - **Admin Interface:** Access the admin interface at /admin to manage content. Use the superuser credentials created during installation.
 
+## Deployment on Heroku
+To deploy the Muay Thai Club website on Heroku, follow these steps:
+
+### Prerequisites
+- Ensure you have a Heroku account. Sign up at Heroku if you don't have one.
+- Install the Heroku CLI.
+
+**Steps to Deploy**
+- Login to Heroku:
+- Create a new Heroku app:
+- Add a PostgreSQL database to your app:
+
+1. **Set up environment variables:**
+- In your local project directory, create a .env file and add your environment variables (e.g., Database URL, Django secret key, Cloudinary URL). You can also need to set them directly in Heroku.
+
+```console
+os.environ.setdefault("DATABASE_URL", "your-database-url")
+os.environ.setdefault("DJANGO_SECRET_KEY", "your-secret-key")
+os.environ.setdefault("CLOUDINARY_URL", "your-cloudinary-url")
+```
+
+2. **Prepare your project for Heroku deployment:**
+- Create a Procfile in the root of your project:
+
+```console
+web: gunicorn your_project_name.wsgi:application
+```
+
+- Create requirements.txt:
+
+```console
+pip freeze > requirements.txt
+```
+
+- Update settings.py to use PostgreSQL database URL set in env.py:
+
+```console
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+```
+
+- Update settings.py with trusted origins
+
+```console
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.herokuapp.com",
+]
+```
+
+- Add static files configuration in settings.py:
+
+```console
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+```
+
+- Install gunicorn and dj-database-url:
+
+```console
+pip3 install gunicorn dj-database-url
+```
+
+3. **Initialize a Git repository if you haven't already:**
+
+```console
+git init
+```
+
+- Commit your changes:
+
+```console
+git add .
+git commit -m "Prepare for Heroku deployment"
+```
+
+- In Heroku dashboard where you created your new app in the deploy tab conntect your github and then deploy your branch
+- Open your deployed app in the browser:
+
+
 ## Local Deployment
 
 1. **Clone the repository:**
