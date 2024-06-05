@@ -31,3 +31,9 @@ Access the site here <a href="https://muay-thai-club-website-a215eeee688f.heroku
 
 **Database:**
 - SQLite (default Django database, easily replaceable with PostgreSQL, MySQL, etc.)
+
+## Usage
+**Register a new user:** Navigate to the signup page and fill out the registration form.
+**Login:** Use the login page to access your account.
+**Admin Interface:** Access the admin interface at /admin to manage content. Use the superuser credentials created during installation.
+
