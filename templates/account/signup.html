@@ -28,7 +28,15 @@
         method="post"
         action="{% url 'account_signup' %}"
       >
-        {% csrf_token %} {{ form.as_p }} 
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ form.errors }}
+        </div>
+        {% endif %}
+        
         {% if redirect_field_value %}
         <input
           type="hidden"
@@ -43,5 +51,7 @@
     </div>
   </div>
 </div>
+
+
 
 {% endblock %}

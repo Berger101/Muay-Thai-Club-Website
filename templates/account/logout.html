@@ -17,7 +17,13 @@ Out" %}{% endblock %}
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
       <form method="post" action="{% url 'account_logout' %}">
-        {% csrf_token %} {% if redirect_field_value %}
+        {% csrf_token %}
+        {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ form.errors }}
+        </div>
+        {% endif %}
+        {% if redirect_field_value %}
         <input
           type="hidden"
           name="{{ redirect_field_name }}"
