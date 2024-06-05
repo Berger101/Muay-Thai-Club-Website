@@ -32,25 +32,17 @@ h1, h2, h3, h4, h5, h6 {
   color: #E84610;
 }
 
+.thin {
+  font-weight: 300;
+}
+
 /* colors */
 .red-o {
   color: #E84610;
 }
 
-.thin {
-  font-weight: 300;
-}
-
-.light-bg {
-  background-color: #fff;
-}
-
 .dark-bg {
   background-color: #212529;
-}
-
-.main-bg {
-  background-color: #F9FAFC;
 }
 
 /* Home page */
@@ -86,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.25rem;
 }
 
-/* Style for the cards */
+/* Style for the cards on activity page */
 .card {
   transition: transform 0.3s ease-in-out;
   border: none;
@@ -111,14 +103,6 @@ h1, h2, h3, h4, h5, h6 {
   object-position: center;
 }
 
-
-.image-flash {
-  padding: 5px 10px;
-  border-radius: 3px;
-  background-color: rgba(232, 70, 16, 0.8);
-}
-
-/* Images on activity page */
 .card {
   height: 100%;
   display: flex;
@@ -139,24 +123,31 @@ h1, h2, h3, h4, h5, h6 {
   flex-shrink: 0;
 }
 
-/* About us section */
+/* Activity page */
+/* Images on activity page */
+.image-flash {
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-color: rgba(232, 70, 16, 0.8);
+}
+
+.post-link {
+  text-decoration: none;
+  color: #445261;
+}
+
+.post-link:hover {
+  color: #E84610;
+}
+
+/* contact page */
 .about-us-section {
   width: 70%;
   margin: 0 auto;
   text-align: center;
 }
 
-.scale {
-  width: 100%;
-  height: auto;
-}
-
-.author {
-  color: white;
-  margin: 4px;
-  text-transform: uppercase;
-}
-
+/* Training session detail page */
 .masthead {
   margin-top: 10px;
   overflow: hidden;
@@ -191,47 +182,20 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 100;
 }
 
-.post-link {
-  text-decoration: none;
-  color: #445261;
-}
-
-.post-link:hover,
-.page-link {
-  color: #E84610;
-}
-
-.post-title {
-  margin-top: 10%;
-  margin-left: 5%;
-}
-
 .post-subtitle {
   margin-left: 5%;
   color: lightgray;
 }
 
-.btn-signup,
-.btn-edit {
-  background-color: #188181;
-  color: #fff;
+.author {
+  color: white;
+  margin: 4px;
+  text-transform: uppercase;
 }
 
-.btn-signup:hover,
-.btn-signup:active {
-  background-color: #fff;
-  color: #23BBBB;
-}
-
-.link {
-  color: #23BBBB;
-  text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-  color: #445261;
-  text-decoration: underline;
+.post-title {
+  margin-top: 10%;
+  margin-left: 5%;
 }
 
 /* Buttons */
@@ -243,24 +207,10 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #E84610;
 }
 
-/* .btn-delete {
-  color: #fff;
-  background: #E84610;
-} */
-
 .btn-like:hover,
 .btn-like:active {
   color: #fff;
-  /* border: none; */
 }
-
-/* .faded {
-  color: rgb(172, 175, 175);
-}
-
-.approval {
-  color: rgb(222, 146, 168);
-} */
 
 /* Google Maps */
 div#map {
