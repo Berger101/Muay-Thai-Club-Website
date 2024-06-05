@@ -14,4 +14,20 @@ Access the site here <a href="https://muay-thai-club-website-a215eeee688f.heroku
 - Activities with categories created from the admin dashboard
 - Admin interface for managing content
 - CRUD availability for users
+
+## Technologies Used
+
+**Frontend:**
+- HTML
+- CSS
+- Bootstrap
+
+**Backend:**
+- Python
+- Django
+- Django-allauth for authentication
+- Cloudinary for contact form
 - Static files for deployment on heroku website
+
+**Database:**
+- SQLite (default Django database, easily replaceable with PostgreSQL, MySQL, etc.)
