@@ -29,7 +29,17 @@ class TrainingSessionAdmin(SummernoteModelAdmin):
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
-    list_display = ('user', 'session')
+    list_display = ('user', 'session_title', 'session_date', 'session_time')
 
+    def session_title(self, obj):
+        return obj.session.title
 
-# admin.site.register(Booking, BookingAdmin)
+    def session_date(self, obj):
+        return obj.session.date
+
+    def session_time(self, obj):
+        return obj.session.time
+
+    session_title.short_description = 'Session Title'
+    session_date.short_description = 'Session Date'
+    session_time.short_description = 'Session Time'
