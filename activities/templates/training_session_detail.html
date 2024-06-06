@@ -7,7 +7,7 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <h1 class="post-title">{{ session.title }}</h1>
-                <p class="post-subtitle">{{ session.instructor }} | {{ session.date }} | {{ session.time }}</p>
+                <p class="post-subtitle">{{ session.instructor }} | {{ session.date }} | {{ session.time|time:"H:i" }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in session.featured_image.url %}
@@ -29,25 +29,28 @@
                 <p class="card-text">
                     {{ session.description | safe }}
                 </p>
-                <div>
-                    {% if booking %}
-                        <p>You have booked this session.</p>
-                        <form method="post" action="{% url 'training_session_detail' session.pk %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="cancel" value="1">
-                            <button type="submit" class="btn btn-danger">Cancel Booking</button>
-                        </form>
-                    {% else %}
-                        <form method="post" action="{% url 'training_session_detail' session.pk %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="book" value="1">
-                            <input type="hidden" name="session" value="{{ session.id }}">
-                            <button type="submit" class="btn btn-like">Book this session</button>
-                        </form>
-                    {% endif %}
-                </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mb-4">
+    {% if booking %}
+        <p>You have booked this session.</p>
+        <form method="post" action="{% url 'training_session_detail' session.pk %}">
+            {% csrf_token %}
+            <input type="hidden" name="cancel" value="1">
+            <button type="submit" class="btn btn-danger">Cancel Booking</button>
+        </form>
+    {% else %}
+        <form method="post" action="{% url 'training_session_detail' session.pk %}">
+            {% csrf_token %}
+            <input type="hidden" name="book" value="1">
+            <input type="hidden" name="session" value="{{ session.id }}">
+            <button type="submit" class="btn btn-like">Book this session</button>
+        </form>
+    {% endif %}
     </div>
 </div>
 {% endblock content %}
