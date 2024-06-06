@@ -32,7 +32,7 @@
                 <p class="card-text">{{ session.excerpt }}</p>
               </a>
               <hr />
-              <p class="card-text text-muted small">{{ session.date }} {{ session.time }}</p>
+              <p class="card-text text-muted small">{{ session.date }} {{ session.time|time:"H:i" }}</p>
             </div>
           </div>
         </div>
