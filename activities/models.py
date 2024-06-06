@@ -51,10 +51,12 @@ class TrainingSession(models.Model):
 
     def __str__(self):
         return f"{self.instructor} - {self.date} {self.time}"
-    # def __str__(self):
-    #     return self.title
 
 
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     session = models.ForeignKey(TrainingSession, on_delete=models.CASCADE)
+
+
+    def __str__(self):
+        return f"{self.user.username} - {self.session.title}"
