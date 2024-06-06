@@ -27,8 +27,9 @@ class TrainingSessionAdmin(SummernoteModelAdmin):
         return form
 
 
+@admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
     list_display = ('user', 'session')
 
 
-admin.site.register(Booking, BookingAdmin)
+# admin.site.register(Booking, BookingAdmin)
