@@ -32,13 +32,15 @@
                 <div>
                     {% if booking %}
                         <p>You have booked this session.</p>
-                        <form method="post" action="{% url 'booking_delete' booking.pk %}">
+                        <form method="post" action="{% url 'training_session_detail' session.pk %}">
                             {% csrf_token %}
+                            <input type="hidden" name="cancel" value="1">
                             <button type="submit" class="btn btn-danger">Cancel Booking</button>
                         </form>
                     {% else %}
                         <form method="post" action="{% url 'training_session_detail' session.pk %}">
                             {% csrf_token %}
+                            <input type="hidden" name="book" value="1">
                             <input type="hidden" name="session" value="{{ session.id }}">
                             <button type="submit" class="btn btn-like">Book this session</button>
                         </form>
