@@ -53,7 +53,10 @@ To deploy the Muay Thai Club website on Heroku, follow these steps:
 
 ### Prerequisites
 - Ensure you have a Heroku account. Sign up at Heroku if you don't have one.
-- Install the Heroku CLI.
+- Prerequisites
+- Python 3.x
+- Django
+- Cloudinary account (for image storage)
 
 **Steps to Deploy**
 - Login to Heroku:
