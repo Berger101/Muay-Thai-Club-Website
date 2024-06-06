@@ -164,5 +164,5 @@ http://127.0.0.1:8000/
   - Some of the text for the README.md file were taken from <a href="https://chat.openai.com/">ChatGPT</a>
   - Contact form requests on contact page taken from the CI <a href="https://github.com/Code-Institute-Solutions/blog/tree/main/13_collaboration_form/01_create_the_form/about">Django Blog</a>
 
-**Styling**
-  - The styling for the game area was largely taken from the CI <a href="https://p3-battleships.herokuapp.com/">Battleships</a> project.
+## License
+- This project is licensed under the MIT License - see the LICENSE file for details.
