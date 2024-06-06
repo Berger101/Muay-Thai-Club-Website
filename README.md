@@ -46,6 +46,10 @@ Access the site here <a href="https://muay-thai-club-website-a215eeee688f.heroku
 ## Usage
 - **Register a new user:** Navigate to the signup page and fill out the registration form.
 - **Login:** Use the login page to access your account.
+- **Booking a Training Session**
+- 1 Navigate to the list of training sessions.
+- 2 Select a session to view its details.
+- 3 Click on the "Book Now" button to create a booking.
 - **Admin Interface:** Access the admin interface at /admin to manage content. Use the superuser credentials created during installation.
 
 ## Deployment on Heroku
