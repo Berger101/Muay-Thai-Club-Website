@@ -38,7 +38,8 @@ class BookingAdmin(admin.ModelAdmin):
         return obj.session.date
 
     def session_time(self, obj):
-        return obj.session.time
+        session_time = obj.session.time.strftime("%H:%M")
+        return session_time
 
     session_title.short_description = 'Session Title'
     session_date.short_description = 'Session Date'
