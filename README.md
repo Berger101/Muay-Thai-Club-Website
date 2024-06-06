@@ -13,7 +13,7 @@ Access the site here <a href="https://muay-thai-club-website-a215eeee688f.heroku
 - Contact form for questions from users saved in the database
 - Saving images using Cloudinary
 - Activities with categories created from the admin dashboard
-- Admin interface for managing content
+- Admin interface for managing content with rich text editing capabilities provided by django-summernote
 - CRUD availability for users
 
 ## Technologies Used
