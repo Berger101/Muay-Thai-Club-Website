@@ -30,6 +30,21 @@ class TrainingSessionDetailView(DetailView):
     template_name = 'training_session_detail.html'
     context_object_name = 'session'
 
+    def post(self, request, *args, **kwargs):
+        session = self.get_object()
+        user = request.user
+
+        # Check if the user has already booked this session
+        booking = Booking.objects.filter(session=session, user=user).first()
+        if not booking:
+            # Create a new booking
+            Booking.objects.create(session=session, user=user)
+        return redirect('training_session_detail', pk=session.pk)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['booking'] = Booking.objects.filter(session=self.object, user=self.request.user).first()
+        return context
 
 
 class BookingListView(ListView):
