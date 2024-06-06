@@ -57,6 +57,8 @@ class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     session = models.ForeignKey(TrainingSession, on_delete=models.CASCADE)
 
+    class Meta:
+        unique_together = ('user', 'session')
 
     def __str__(self):
         return f"{self.user.username} - {self.session.title}"
