@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, DeleteView
 from .models import TrainingSession, Category, Booking
 from .forms import BookingForm
+from django.contrib import messages
 
 
 class TrainingSessionListView(ListView):
@@ -34,11 +35,18 @@ class TrainingSessionDetailView(DetailView):
         session = self.get_object()
         user = request.user
 
-        # Check if the user has already booked this session
-        booking = Booking.objects.filter(session=session, user=user).first()
-        if not booking:
-            # Create a new booking
-            Booking.objects.create(session=session, user=user)
+        if 'book' in request.POST:
+            # Handle booking creation
+            booking, created = Booking.objects.get_or_create(session=session, user=user)
+            if created:
+                messages.success(request, "You have successfully booked this session.")
+            else:
+                messages.info(request, "You have already booked this session.")
+        elif 'cancel' in request.POST:
+            # Handle booking cancellation
+            Booking.objects.filter(session=session, user=user).delete()
+            messages.success(request, "Your booking has been canceled.")
+        
         return redirect('training_session_detail', pk=session.pk)
 
     def get_context_data(self, **kwargs):
