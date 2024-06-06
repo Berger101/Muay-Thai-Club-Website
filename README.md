@@ -4,7 +4,7 @@ Welcome to the Muay Thai Club website! This project is a web application build w
 
 Access the site here <a href="https://muay-thai-club-website-a215eeee688f.herokuapp.com/">Muay Thai Club Website</a>
 
-<img src="">
+![Website Screenshot](assets/images/main_screenshot2.png)
 
 ## Table of Contents
 - [Features](#features)
