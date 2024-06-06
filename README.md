@@ -175,7 +175,7 @@ http://127.0.0.1:8000/
 
 **Future Improvements:**
 - Improving code functionality in different areas
-- Refactoring code so it is more automated with Django
+- Restructure homepage view so it is automated
 - Activities to categories.objects.all
 
 ## Credits
