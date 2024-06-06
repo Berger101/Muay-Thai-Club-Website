@@ -6,6 +6,16 @@ Access the site here <a href="https://muay-thai-club-website-a215eeee688f.heroku
 
 <img src="">
 
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Usage](#usage)
+- [Deployment on Heroku](#deployment-on-heroku)
+- [Local Deployment](#local-deployment)
+- [Known Issues and Future Improvements](#known-issues-and-future-improvements)
+- [Credits](#credits)
+- [License](#license)
+
 ## Features
 
 - User Registration, Login, and Logout using Django-allauth
@@ -157,6 +167,16 @@ python manage.py runserver
 ```console
 http://127.0.0.1:8000/
 ```
+
+## Known Issues and Future Improvements
+
+**Known Issues:**
+- Describe any known issues here.
+
+**Future Improvements:**
+- Improving code functionality in different areas
+- Refactoring code so it is more automated with Django
+- Activities to categories.objects.all
 
 ## Credits
 
