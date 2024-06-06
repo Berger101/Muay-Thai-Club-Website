@@ -181,6 +181,7 @@ http://127.0.0.1:8000/
 - Describe any known issues here.
 
 **Future Improvements:**
+- Testing application with Django testing
 - Improving code functionality in different areas
 - Restructure homepage view so it is automated
 - Activities to categories.objects.all
