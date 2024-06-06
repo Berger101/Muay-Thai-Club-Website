@@ -158,6 +158,16 @@ python manage.py runserver
 http://127.0.0.1:8000/
 ```
 
+## Known Issues and Future Improvements
+
+**Known Issues:**
+- Describe any known issues here.
+
+**Future Improvements:**
+- Improving code functionality in different areas
+- Refactoring code so it is more automated with Django
+- Activities to categories.objects.all
+
 ## Credits
 
 **Content**
