@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import TrainingSessionListView, TrainingSessionDetailView, BookingListView, BookingCreateView, BookingDeleteView
+from .views import TrainingSessionListView, TrainingSessionDetailView, BookingListView
 
 
 urlpatterns = [
@@ -9,6 +9,4 @@ urlpatterns = [
     path('category/<slug:category_slug>/', TrainingSessionListView.as_view(), name='category_sessions'),
     # CRUD (create, read, delete) bookings
     path('bookings/', BookingListView.as_view(), name='booking_list'),
-    path('bookings/new/', BookingCreateView.as_view(), name='booking_create'),
-    path('bookings/<int:pk>/delete/', BookingDeleteView.as_view(), name='booking_delete'),
 ]
