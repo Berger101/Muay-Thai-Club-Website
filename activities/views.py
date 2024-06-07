@@ -1,10 +1,10 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import TrainingSession, Category, Booking
 from .forms import BookingForm
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 class TrainingSessionListView(ListView):
@@ -96,3 +96,32 @@ class BookingDeleteView(LoginRequiredMixin, DeleteView):
 
     def get_queryset(self):
         return Booking.objects.filter(user=self.request.user)
+
+
+class TrainingSessionCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+    model = TrainingSession
+    template_name = 'training_session_form.html'
+    fields = ['title', 'instructor', 'date', 'time', 'featured_image', 'categories', 'description', 'excerpt']
+    success_url = reverse_lazy('activities')
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+
+class TrainingSessionUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = TrainingSession
+    template_name = 'training_session_form.html'
+    fields = ['title', 'instructor', 'date', 'time', 'featured_image', 'categories', 'description', 'excerpt']
+    success_url = reverse_lazy('activities')
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+
+class TrainingSessionDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = TrainingSession
+    template_name = 'training_session_confirm_delete.html'
+    success_url = reverse_lazy('activities')
+
+    def test_func(self):
+        return self.request.user.is_staff
