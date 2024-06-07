@@ -4,6 +4,7 @@ from django.views.generic import ListView, DetailView, CreateView, DeleteView
 from .models import TrainingSession, Category, Booking
 from .forms import BookingForm
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class TrainingSessionListView(ListView):
@@ -35,27 +36,38 @@ class TrainingSessionDetailView(DetailView):
         session = self.get_object()
         user = request.user
 
+        if not user.is_authenticated:
+            messages.error(
+                request, "You need to log in to book or cancel a session.")
+            return redirect('account_login')
+
         if 'book' in request.POST:
             # Handle booking creation
-            booking, created = Booking.objects.get_or_create(session=session, user=user)
+            booking, created = Booking.objects.get_or_create(
+                session=session, user=user)
             if created:
-                messages.success(request, "You have successfully booked this session.")
+                messages.success(
+                    request, "You have successfully booked this session.")
             else:
                 messages.info(request, "You have already booked this session.")
         elif 'cancel' in request.POST:
             # Handle booking cancellation
             Booking.objects.filter(session=session, user=user).delete()
             messages.success(request, "Your booking has been canceled.")
-        
+
         return redirect('training_session_detail', pk=session.pk)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['booking'] = Booking.objects.filter(session=self.object, user=self.request.user).first()
+        if self.request.user.is_authenticated:
+            context['booking'] = Booking.objects.filter(
+                session=self.object, user=self.request.user).first()
+        else:
+            context['booking'] = None
         return context
 
 
-class BookingListView(ListView):
+class BookingListView(LoginRequiredMixin, ListView):
     model = Booking
     template_name = 'booking_list.html'
     context_object_name = 'bookings'
@@ -64,7 +76,7 @@ class BookingListView(ListView):
         return Booking.objects.filter(user=self.request.user)
 
 
-class BookingCreateView(CreateView):
+class BookingCreateView(LoginRequiredMixin, CreateView):
     model = Booking
     form_class = BookingForm
     template_name = 'booking_form.html'
@@ -77,7 +89,7 @@ class BookingCreateView(CreateView):
         return super().form_valid(form)
 
 
-class BookingDeleteView(DeleteView):
+class BookingDeleteView(LoginRequiredMixin, DeleteView):
     model = Booking
     template_name = 'booking_confirm_delete.html'
     success_url = reverse_lazy('booking_list')
