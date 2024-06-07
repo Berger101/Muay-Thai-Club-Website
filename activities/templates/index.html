@@ -42,16 +42,16 @@
                   <button type="submit" class="btn btn-danger btn-sm delete-button">Delete</button>
                 </form>
               </div>
-              {% endif %}
+              
             </div>
 
           </div>
         </div>
-        {% if forloop.counter|divisibleby:4 %}
-      </div>
-      <!-- Behöver jag rowen? -->
-      <div class="row">{% endif %}
-        {% endfor %}
+        {% endif %}
+        <!-- {% if forloop.counter|divisibleby:4 %} -->
+
+      <!-- {% endif %} -->
+      {% endfor %}
       </div>
       {% if user.is_staff %}
       <a href="{% url 'training_session_create' %}" class="btn btn-like mb-4">Create New Session</a>
