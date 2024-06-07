@@ -41,7 +41,7 @@
             <form method="post" action="{% url 'training_session_detail' session.pk %}">
                 {% csrf_token %}
                 {% if booking %}
-                <button type="submit" name="cancel" class="btn btn-danger">Cancel Booking</button>
+                <button type="submit" name="cancel" class="btn btn-danger delete-button">Cancel Booking</button>
                 {% else %}
                 <button type="submit" name="book" class="btn btn-like">Book Now</button>
                 {% endif %}
@@ -57,4 +57,6 @@
     {% endif %}
     </div>
 </div>
+
+<script src="{% static 'js/confirm_delete.js' %}"></script>
 {% endblock content %}
