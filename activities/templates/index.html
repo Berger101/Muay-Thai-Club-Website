@@ -4,7 +4,6 @@
 {% block content %}
 <div class="container-fluid">
   <div class="row">
-    <!-- Training Sessions Column -->
     <div class="col-12 mt-3">
       <div class="row">
 
@@ -40,7 +39,7 @@
                 <a href="{% url 'training_session_edit' session.pk %}" class="btn btn-warning btn-sm">Edit</a>
                 <form method="post" action="{% url 'training_session_delete' session.pk %}" style="display:inline;">
                   {% csrf_token %}
-                  <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                  <button type="submit" class="btn btn-danger btn-sm delete-button">Delete</button>
                 </form>
               </div>
               {% endif %}
@@ -50,6 +49,7 @@
         </div>
         {% if forloop.counter|divisibleby:4 %}
       </div>
+      <!-- Behöver jag rowen? -->
       <div class="row">{% endif %}
         {% endfor %}
       </div>
@@ -75,4 +75,6 @@
   </nav>
   {% endif %}
 </div>
+
+<script src="{% static 'js/confirm_delete.js' %}"></script>
 {% endblock %}
