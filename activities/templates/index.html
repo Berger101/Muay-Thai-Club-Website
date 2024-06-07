@@ -7,6 +7,7 @@
     <!-- Training Sessions Column -->
     <div class="col-12 mt-3">
       <div class="row">
+
         {% for session in sessions %}
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
           <div class="card mb-4 shadow-sm">
@@ -20,6 +21,7 @@
                 <p class="m-0 text-white">Instructor: {{ session.instructor }}</p>
               </div>
             </div>
+
             <div class="card-body">
               <p class="card-text">
                 Category:
@@ -33,7 +35,17 @@
               </a>
               <hr />
               <p class="card-text text-muted small">{{ session.date }} {{ session.time|time:"H:i" }}</p>
+              {% if user.is_staff %}
+              <div>
+                <a href="{% url 'training_session_edit' session.pk %}" class="btn btn-warning btn-sm">Edit</a>
+                <form method="post" action="{% url 'training_session_delete' session.pk %}" style="display:inline;">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+              </div>
+              {% endif %}
             </div>
+
           </div>
         </div>
         {% if forloop.counter|divisibleby:4 %}
@@ -41,6 +53,9 @@
       <div class="row">{% endif %}
         {% endfor %}
       </div>
+      {% if user.is_staff %}
+      <a href="{% url 'training_session_create' %}" class="btn btn-like mb-4">Create New Session</a>
+      {% endif %}
     </div>
   </div>
   {% if is_paginated %}
