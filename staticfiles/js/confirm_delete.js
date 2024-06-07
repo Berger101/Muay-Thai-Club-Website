@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   deleteButtons.forEach(function (button) {
       button.addEventListener('click', function (event) {
-          var confirmed = confirm("Are you sure you want to delete this activity?");
+          var confirmed = confirm("Are you sure you want to proceed?");
           if (!confirmed) {
               event.preventDefault();
           }
