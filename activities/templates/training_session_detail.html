@@ -22,22 +22,19 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container mt-3">
     <div class="row">
-        <div class="col mb-4 mt-3 left top">
-            <div class="">
-                <p class="">
-                    {{ session.description | safe }}
-                </p>
-            </div>
+        <div class="col text-center mb-4">
+            <p class="lead">
+                {{ session.description | safe }}
+            </p>
         </div>
     </div>
-</div>
 
-<div class="container">
     {% if user.is_authenticated %}
     <div class="row mb-4">
-        <div class="col">
+        <div class="col d-flex justify-content-between">
+            <a href="{% url 'activities' %}" class="btn btn-secondary">Back to Activities</a>
             <form method="post" action="{% url 'training_session_detail' session.pk %}">
                 {% csrf_token %}
                 {% if booking %}
@@ -50,12 +47,11 @@
     </div>
     {% else %}
     <div class="row">
-        <div class="col">
+        <div class="col text-center">
             <p>Please <a href="{% url 'account_login' %}">login</a> to book this session.</p>
         </div>
     </div>
     {% endif %}
-    </div>
 </div>
 
 <script src="{% static 'js/confirm_delete.js' %}"></script>
