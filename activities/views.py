@@ -1,16 +1,16 @@
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import TrainingSession, Category, Booking
-from .forms import BookingForm
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from .models import TrainingSession, Category, Booking
+# from .forms import BookingForm
 
 
 class TrainingSessionListView(ListView):
     model = TrainingSession
     template_name = 'index.html'
-    paginate_by = 6
+    paginate_by = 8
     context_object_name = 'sessions'
 
     def get_queryset(self):
@@ -67,35 +67,35 @@ class TrainingSessionDetailView(DetailView):
         return context
 
 
-class BookingListView(LoginRequiredMixin, ListView):
-    model = Booking
-    template_name = 'booking_list.html'
-    context_object_name = 'bookings'
+# class BookingListView(LoginRequiredMixin, ListView):
+#     model = Booking
+#     template_name = 'booking_list.html'
+#     context_object_name = 'bookings'
 
-    def get_queryset(self):
-        return Booking.objects.filter(user=self.request.user)
-
-
-class BookingCreateView(LoginRequiredMixin, CreateView):
-    model = Booking
-    form_class = BookingForm
-    template_name = 'booking_form.html'
-    success_url = reverse_lazy('booking_list')
-
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        form.instance.session = get_object_or_404(
-            TrainingSession, id=self.request.POST.get('session'))
-        return super().form_valid(form)
+#     def get_queryset(self):
+#         return Booking.objects.filter(user=self.request.user)
 
 
-class BookingDeleteView(LoginRequiredMixin, DeleteView):
-    model = Booking
-    template_name = 'booking_confirm_delete.html'
-    success_url = reverse_lazy('booking_list')
+# class BookingCreateView(LoginRequiredMixin, CreateView):
+#     model = Booking
+#     form_class = BookingForm
+#     template_name = 'booking_form.html'
+#     success_url = reverse_lazy('booking_list')
 
-    def get_queryset(self):
-        return Booking.objects.filter(user=self.request.user)
+#     def form_valid(self, form):
+#         form.instance.user = self.request.user
+#         form.instance.session = get_object_or_404(
+#             TrainingSession, id=self.request.POST.get('session'))
+#         return super().form_valid(form)
+
+
+# class BookingDeleteView(LoginRequiredMixin, DeleteView):
+#     model = Booking
+#     template_name = 'booking_confirm_delete.html'
+#     success_url = reverse_lazy('booking_list')
+
+#     def get_queryset(self):
+#         return Booking.objects.filter(user=self.request.user)
 
 
 class TrainingSessionCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
