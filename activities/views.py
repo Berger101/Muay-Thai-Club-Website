@@ -4,7 +4,6 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import TrainingSession, Category, Booking
-# from .forms import BookingForm
 
 
 class TrainingSessionListView(ListView):
@@ -67,41 +66,11 @@ class TrainingSessionDetailView(DetailView):
         return context
 
 
-# class BookingListView(LoginRequiredMixin, ListView):
-#     model = Booking
-#     template_name = 'booking_list.html'
-#     context_object_name = 'bookings'
-
-#     def get_queryset(self):
-#         return Booking.objects.filter(user=self.request.user)
-
-
-# class BookingCreateView(LoginRequiredMixin, CreateView):
-#     model = Booking
-#     form_class = BookingForm
-#     template_name = 'booking_form.html'
-#     success_url = reverse_lazy('booking_list')
-
-#     def form_valid(self, form):
-#         form.instance.user = self.request.user
-#         form.instance.session = get_object_or_404(
-#             TrainingSession, id=self.request.POST.get('session'))
-#         return super().form_valid(form)
-
-
-# class BookingDeleteView(LoginRequiredMixin, DeleteView):
-#     model = Booking
-#     template_name = 'booking_confirm_delete.html'
-#     success_url = reverse_lazy('booking_list')
-
-#     def get_queryset(self):
-#         return Booking.objects.filter(user=self.request.user)
-
-
 class TrainingSessionCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = TrainingSession
     template_name = 'training_session_form.html'
-    fields = ['title', 'instructor', 'date', 'time', 'featured_image', 'categories', 'description', 'excerpt']
+    fields = ['title', 'instructor', 'date', 'time',
+              'featured_image', 'categories', 'description', 'excerpt']
     success_url = reverse_lazy('activities')
 
     def test_func(self):
@@ -111,7 +80,8 @@ class TrainingSessionCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateV
 class TrainingSessionUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = TrainingSession
     template_name = 'training_session_form.html'
-    fields = ['title', 'instructor', 'date', 'time', 'featured_image', 'categories', 'description', 'excerpt']
+    fields = ['title', 'instructor', 'date', 'time',
+              'featured_image', 'categories', 'description', 'excerpt']
     success_url = reverse_lazy('activities')
 
     def test_func(self):
