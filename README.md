@@ -24,7 +24,22 @@ Access the site here <a href="https://muay-thai-club-website-a215eeee688f.heroku
 - Saving images using Cloudinary
 - Activities with categories created from the admin dashboard
 - Admin interface for managing content with rich text editing capabilities provided by django-summernote
-- CRUD availability for users
+- Book or cancel booking for users
+
+### CRUD Functionality
+Our Muay Thai Club website includes comprehensive CRUD (Create, Read, Update, Delete) functionality for managing training sessions. These operations are integrated both into the frontend and admin interface, ensuring that only authenticated and authorized users can manage the content. This ensures both security and ease of management.
+
+**Create**
+- Admins can create new training sessions through a user-friendly form available in the admin interface. This form includes fields for the session title, description, instructor, categories, featured image, date, and time.
+
+**Read**
+- All training sessions are listed on the main page, with pagination to improve user experience. Users can filter sessions by category, and each session detail page provides complete information about the session, including booking options for authenticated users.
+
+**Update**
+- Admins can update existing training sessions through the admin interface. Each session listed includes an "Edit" button that directs the admin to an edit form pre-filled with the current session details. This form allows the admin to make necessary changes and save them.
+
+**Delete**
+- Admins can delete training sessions directly from the list of sessions or from the session detail page. Each delete action is confirmed with a prompt to prevent accidental deletions.
 
 ## Technologies Used
 
