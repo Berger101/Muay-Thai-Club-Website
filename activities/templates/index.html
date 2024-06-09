@@ -49,11 +49,7 @@
     </div>
   </div>
   {% if user.is_staff %}
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-6 my-5">
       <a href="{% url 'training_session_create' %}" class="btn btn-like mb-4">Create New Session</a>
-    </div>
-  </div>
   {% endif %}
   {% if is_paginated %}
   <nav aria-label="Page navigation">
