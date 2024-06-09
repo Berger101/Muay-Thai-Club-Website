@@ -49,6 +49,7 @@ Access the site here <a href="https://muay-thai-club-website-a215eeee688f.heroku
 
 **Deployment:**
 - **Heroku:** A cloud platform that lets you build, run, and operate applications entirely in the cloud.
+- **Gunicorn:** A Python WSGI HTTP Server for UNIX, which is used to run your Django application on Heroku.
 - **Whitenoise:** A library that enables your Django application to serve its own static files, simplifying the process of deploying static assets.
 - **dj-database-url:** A utility to parse database URLs in Django settings, facilitating seamless database configuration in Heroku’s environment.
 - **Cloudinary:** Used for managing and delivering media files (images, videos, etc.). The django-cloudinary-storage package integrates Cloudinary with Django.
@@ -65,6 +66,8 @@ Access the site here <a href="https://muay-thai-club-website-a215eeee688f.heroku
 - **tzdata:** Timezone database for handling time zone conversions.
 - **urllib3:** A powerful, user-friendly HTTP client for Python.
 - **webencodings:** Encoding utilities for web applications.
+- **packaging:** Library for dealing with Python packages.
+- **gunicorn:** A Python WSGI HTTP Server for UNIX, used to run the Django application on Heroku.
 
 ## Additional Information
 **Other Tools and Configurations:**
