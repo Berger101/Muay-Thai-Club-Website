@@ -29,19 +29,48 @@ Access the site here <a href="https://muay-thai-club-website-a215eeee688f.heroku
 ## Technologies Used
 
 **Frontend:**
-- HTML
-- CSS
-- Bootstrap
+- **HTML:** Used for structuring the web pages.
+- **CSS:** Used for styling the web pages.
+- **Bootstrap:** A CSS framework that helps to create responsive and mobile-first web pages. It provides pre-designed components and utilities.
 
 **Backend:**
-- Python
-- Django
-- Django-allauth for authentication
-- Contact form request saved in database
-- Static files for deployment on heroku website
+- **Python:** The core programming language used for developing the backend.
+- **Django:** A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+- **Django-allauth:** Used for handling user authentication, registration, and account management.
+- **Django-summernote:** An integration of Summernote (a JavaScript library) with Django, used for rich text editing.
+- **Django-crispy-forms:** Used to control the rendering behavior of Django forms. Specifically, it provides integration with the Bootstrap CSS framework.
+- **Contact Form:** Implemented to allow users to send messages which are saved in the database for further processing or retrieval.
+- **Static Files:** Managed with Django’s static file handling capabilities and deployed with Heroku to serve CSS, JavaScript, and image files efficiently.
 
 **Database:**
-- SQLite (default Django database, easily replaceable with PostgreSQL, MySQL, etc.)
+- **SQLite:** The default database for Django development. It’s lightweight and easy to set up, making it ideal for development and testing purposes.
+- **PostgreSQL:** Mention that while SQLite is used for development, the application is ready to be configured for PostgreSQL for production environments. PostgreSQL is a powerful, open-source object-relational database system with a strong reputation for reliability, feature robustness, and performance.
+- **psycopg2:** The PostgreSQL adapter for Python, allowing your Django application to interact with a PostgreSQL database.
+
+**Deployment:**
+- **Heroku:** A cloud platform that lets you build, run, and operate applications entirely in the cloud.
+- **Whitenoise:** A library that enables your Django application to serve its own static files, simplifying the process of deploying static assets.
+- **dj-database-url:** A utility to parse database URLs in Django settings, facilitating seamless database configuration in Heroku’s environment.
+- **Cloudinary:** Used for managing and delivering media files (images, videos, etc.). The django-cloudinary-storage package integrates Cloudinary with Django.
+
+**Packages and Libraries:**
+- **asgiref:** ASGI (Asynchronous Server Gateway Interface) reference implementation, which provides a standard for asynchronous web servers and applications in Python.
+- **bleach:** A whitelist-based HTML sanitizing library that can be used to clean user input in forms.
+- **certifi:** Provides Mozilla's CA Bundle in Python, crucial for SSL verification.
+- **charset-normalizer:** A library for character encoding auto-detection.
+- **idna:** Support for Internationalized Domain Names in Applications (IDNA).
+- **requests:** A simple, yet elegant HTTP library for Python, used for making HTTP requests.
+- **six:** A Python 2 and 3 compatibility library.
+- **sqlparse:** A non-validating SQL parser for Python, used by Django for formatting SQL queries.
+- **tzdata:** Timezone database for handling time zone conversions.
+- **urllib3:** A powerful, user-friendly HTTP client for Python.
+- **webencodings:** Encoding utilities for web applications.
+
+## Additional Information
+**Other Tools and Configurations:**
+- **Git:** Version control system used to track changes in the source code.
+- **GitHub:** Hosting service for version control using Git, used for project collaboration and deployment.
+- **Virtual Environment (venv):** Used to create isolated Python environments for managing dependencies.
 
 ## Usage
 - **Register a new user:** Navigate to the signup page and fill out the registration form.
