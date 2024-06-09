@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .social-icons i:hover {
-  color: #E84610;
+  color: #a11300;
 }
 
 .thin {
@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* colors */
 .red-o {
-  color: #E84610;
+  color: #a11300;
 }
 
 .dark-bg {
@@ -129,7 +129,7 @@ h1, h2, h3, h4, h5, h6 {
 .image-flash {
   padding: 5px 10px;
   border-radius: 3px;
-  background-color: rgba(232, 70, 16, 0.8);
+  background-color: #a11300;
 }
 
 .post-link {
@@ -137,11 +137,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post-link:hover {
-  color: #E84610;
+  color: #a11300;
 }
 
 .page-link {
-  color: #E84610;
+  color: #a11300;
 }
 
 /* contact page */
@@ -207,8 +207,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   border: none;
   background: transparent;
-  background-color: #E84610;
-  border: 1px solid #E84610;
+  background-color: #a11300;
+  border: 1px solid #a11300;
 }
 
 .btn-like:hover,
