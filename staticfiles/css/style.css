@@ -63,6 +63,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .hero-section h1,
@@ -132,7 +133,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post-link {
-  text-decoration: none;
   color: #445261;
 }
 
@@ -219,4 +219,16 @@ h1, h2, h3, h4, h5, h6 {
 /* Google Maps */
 div#map {
   min-height: 360px;
+}
+
+/* Media query: large or landscape phones (576px and down) */
+@media screen and (max-width: 576px) {
+
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-text p {
+    font-size: 1rem;
+  }
 }
