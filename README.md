@@ -41,6 +41,68 @@ Our Muay Thai Club website includes comprehensive CRUD (Create, Read, Update, De
 **Delete**
 - Admins can delete training sessions directly from the list of sessions or from the session detail page. Each delete action is confirmed with a prompt to prevent accidental deletions.
 
+## Testing
+
+### Manual Testing
+
+#### Home Page
+- **Test:** Navigated to the home page.
+  - **Result:** The page loads successfully with all images, text, and links displayed correctly.
+- **Test:** Clicked on various navigation links.
+  - **Result:** Each link navigates to the correct page without errors.
+
+#### Contact Form
+- **Test:** Filled out and submitted the contact form.
+  - **Result:** Form submission was successful, saved in the database, and a confirmation message was displayed.
+- **Test:** Submitted the form with invalid data (e.g., missing required fields, invalid email format).
+  - **Result:** Appropriate error messages were displayed for each invalid input.
+
+#### Training Sessions
+- **Test:** Viewed the list of training sessions.
+  - **Result:** All sessions were displayed correctly, including images, titles, and excerpts.
+- **Test:** Clicked on a session to view details.
+  - **Result:** The session detail page loads correctly with all relevant information.
+- **Test:** Created a new training session (as an admin).
+  - **Result:** The new session was successfully created and displayed in the list.
+- **Test:** Edited an existing training session (as an admin).
+  - **Result:** The session was successfully updated.
+- **Test:** Deleted a training session (as an admin).
+  - **Result:** The session was successfully deleted after confirmation.
+- **Test:** booked a training session (as a user).
+  - **Result:** The session was successfully booked after confirmation.
+- **Test:** Canceled a training session (as a user).
+  - **Result:** The session was successfully canceled after confirmation.
+
+#### Error Pages
+- **Test:** Navigated to a non-existent URL.
+  - **Result:** The custom 404 error page was displayed.
+- **Test:** Induced a server error to test the 500 error page.
+  - **Result:** The custom 500 error page was displayed.
+
+### Browser Testing
+- **Browsers Tested:**
+  - Google Chrome
+  - Mozilla Firefox
+  - Microsoft Edge
+- **Test:** Viewed the website in different browsers.
+  - **Result:** The website displays and functions correctly across all tested browsers.
+
+### Responsive Design Testing
+- **Test:** Viewed the website on different devices (desktop, tablet, mobile).
+  - **Result:** The website is responsive and displays correctly on all device sizes.
+
+### Accessibility Testing
+- **Test:** Used tools like Lighthouse and WAVE to test accessibility.
+  - **Result:** The website meets accessibility standards, with scores indicating good compliance.
+
+### Performance Testing
+- **Test:** Used tools like Google PageSpeed Insights to test page load times and performance.
+  - **Result:** The website performs well with minimal load times and good performance scores.
+
+### Deployment Testing
+- **Test:** Deployed the application to Heroku and tested all functionalities.
+  - **Result:** The application works as expected in the production environment without any deployment issues.
+
 ## Technologies Used
 
 **Frontend:**
