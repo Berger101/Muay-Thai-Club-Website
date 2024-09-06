@@ -134,6 +134,8 @@ Secondary Font:
 - **Test:** Used tools like Lighthouse and WAVE to test accessibility.
   - **Result:** The website meets accessibility standards, with scores indicating good compliance.
 
+![Website Screenshot](assets/images/lighthouse.png)
+
 ### Performance Testing
 - **Test:** Used tools like Google PageSpeed Insights to test page load times and performance.
   - **Result:** The website performs well with minimal load times and good performance scores.
