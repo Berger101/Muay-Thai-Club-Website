@@ -75,9 +75,9 @@ Secondary Font:
 - **Bebas Neue:** is used for headings and link text. This sans-serif font offers excellent readability on digital screens, ensuring that the content remains easy to consume even in longer paragraphs.
 
 **Font Sizes:**
-- Headings: (1.4rem) Ranges from h1 (32px) for main titles to h6 (16px) for subheadings, ensuring a clear hierarchy across the site.
-- Body Text: The primary body text is set at 16px, providing comfortable readability across different devices.
-- Buttons/Call to Action: Buttons use slightly larger, bold text to draw attention and encourage user interaction.
+- **Headings:** (1.4rem) Ranges from h1 (32px) for main titles to h6 (16px) for subheadings, ensuring a clear hierarchy across the site.
+- **Body Text:** The primary body text is set at 16px, providing comfortable readability across different devices.
+- **Buttons/Call to Action:** Buttons use slightly larger, bold text to draw attention and encourage user interaction.
 - The combination of the chosen color scheme and typography creates a user-friendly, aesthetically pleasing website that reflects the active and empowering spirit of Muay Thai.
 
 ## Testing
