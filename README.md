@@ -6,6 +6,10 @@ Access the site here <a href="https://muay-thai-club-website-a215eeee688f.heroku
 
 ![Website Screenshot](assets/images/main_screenshot2.png)
 
+## Wireframes
+
+<img src="assets/images/wireframedesktop.png" width="400" height="440"> <img src="assets/images/wireframemobile.png" width="300" height="400">
+
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
