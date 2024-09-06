@@ -12,6 +12,7 @@ Access the site here <a href="https://muay-thai-club-website-a215eeee688f.heroku
 
 ## Table of Contents
 - [Features](#features)
+- [Design](#design)
 - [Technologies Used](#technologies-used)
 - [Usage](#usage)
 - [Deployment on Heroku](#deployment-on-heroku)
@@ -44,6 +45,40 @@ Our Muay Thai Club website includes comprehensive CRUD (Create, Read, Update, De
 
 **Delete**
 - Admins can delete training sessions directly from the list of sessions or from the session detail page. Each delete action is confirmed with a prompt to prevent accidental deletions.
+
+## Design
+
+### Colour Scheme
+
+The color scheme of the Muay Thai Club website was carefully chosen to reflect the energetic and bold spirit of the sport. The design balances vibrant and neutral tones to create an engaging and professional atmosphere.
+
+**Primary Colors**
+- #a11300 (Orange-Red): This strong, bold color symbolizes energy, passion, and action, fitting for a Muay Thai club. It is used for buttons, headings and call-to-action elements.
+- #4A4A4F (Dark-Gray): Used for header and text, this neutral tone ensures readability while maintaining a sleek, modern look.
+
+**Secondary Colors:**
+- #FFFFFF (White): White is used for backgrounds and to create negative space, helping to maintain a clean and minimalistic design.
+- #445261 (Light-Gray): A soft background color used for post links, adding a subtle contrast without distracting from the main content.
+Accent Colors:
+- #ffc107 (Yellow): Used for buttons in the CRUD for admins.
+- #dc3545 (Light-Red): Used for buttons in the CRUD for admins.
+
+- #007BFF (Blue): This color is used sparingly for highlights and links, giving a vibrant touch that contrasts well with the primary color palette.
+- #28A745 (Green): Used to indicate success messages (e.g., successful booking), adding positive reinforcement for user actions.
+Typography
+
+- The typography for the website complements its modern and dynamic design. Two fonts were selected to enhance readability and convey the club's strong, athletic brand.
+
+**Primary Font**
+- **Roboto:** Is the main color of the site, used for body text elements. It's a sans-serif font known for its clean and professional appearance, making it suitable for titles and key messaging.
+Secondary Font:
+- **Bebas Neue:** is used for headings and link text. This sans-serif font offers excellent readability on digital screens, ensuring that the content remains easy to consume even in longer paragraphs.
+
+**Font Sizes:**
+- Headings: (1.4rem) Ranges from h1 (32px) for main titles to h6 (16px) for subheadings, ensuring a clear hierarchy across the site.
+- Body Text: The primary body text is set at 16px, providing comfortable readability across different devices.
+- Buttons/Call to Action: Buttons use slightly larger, bold text to draw attention and encourage user interaction.
+- The combination of the chosen color scheme and typography creates a user-friendly, aesthetically pleasing website that reflects the active and empowering spirit of Muay Thai.
 
 ## Testing
 
