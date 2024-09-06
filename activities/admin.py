@@ -21,8 +21,16 @@ class TrainingSessionAdmin(SummernoteModelAdmin):
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)
         form.base_fields['categories'].queryset = Category.objects.filter(
-            name__in=[Category.BOXING, Category.THAIBOXING, Category.BJJ,
-                      Category.PRIVATETRAINING, Category.GROUPTRAINING, Category.EVENTS, Category.CORPORATEEVENTS, Category.KIDSCLASSES]
+            name__in=[
+                Category.BOXING,
+                Category.THAIBOXING,
+                Category.BJJ,
+                Category.PRIVATETRAINING,
+                Category.GROUPTRAINING,
+                Category.EVENTS,
+                Category.CORPORATEEVENTS,
+                Category.KIDSCLASSES
+            ]
         )
         return form
 
